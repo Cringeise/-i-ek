@@ -1,0 +1,174 @@
+<!doctype html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#050810" />
+  <meta name="description" content="Gece göğünün altında açan küçük bir çiçek bahçesi." />
+  <title>Gece Bahçesi</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body class="not-loaded">
+  <div class="night" aria-hidden="true"></div>
+  <div class="aurora" aria-hidden="true"></div>
+  <div class="stars" id="stars" aria-hidden="true"></div>
+  <div class="moon" aria-hidden="true"><span class="moon-glow"></span></div>
+  <div class="fireflies" id="fireflies" aria-hidden="true"></div>
+  <div class="rain-layer" id="rain" aria-hidden="true"></div>
+
+  <header class="intro">
+    <h1><span>Belki ilk çiçeğimi sana alamadım,</span><span>ama ilk çiçeğimi senin için kodlayıp açtırdım.</span></h1>
+  </header>
+
+  <section class="game-panel" aria-label="Sevgi barı oyunu">
+    <div class="panel-heading">
+      <div>
+        <p class="panel-kicker">KÜÇÜK BİR OYUN</p>
+        <h2>Sevgi Barı</h2>
+      </div>
+      <div class="attempts">Kalan hak <strong id="attempts-count">3</strong></div>
+    </div>
+    <div class="bar-area">
+      <div class="bar-track" id="bar-track" aria-label="Sevgi seviyesi">
+        <div class="bar-fill" id="love-bar-fill"></div>
+        <div class="record-line" id="record-marker"><span>REKOR</span></div>
+      </div>
+      <div class="bar-scale"><span>0</span><span>100</span></div>
+    </div>
+    <p class="game-message" id="message-display" aria-live="polite">Başlamak için butona dokun.</p>
+    <button class="play-button" id="play-button" type="button">Başla</button>
+    <p class="game-hint">Barı durdurmak için butona tekrar bas. En yüksek seviyeyi yakala!</p>
+  </section>
+
+  <main class="garden" aria-label="Çiçek bahçesi">
+    <div class="garden-haze" aria-hidden="true"></div>
+    <div class="flower-bed">
+      <!-- Lavanta: çok dallı mor başaklar -->
+      <figure class="flower flower--lavender" style="--left: 9%; --height: 55vh; --width: 190px; --delay: .15s; --lean: -5deg;">
+        <svg class="flower-art" viewBox="0 0 200 460" role="img" aria-label="Lavanta">
+          <g class="stem-lines" fill="none" stroke="#477b59" stroke-width="5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M100 450 C98 350 105 250 101 112" />
+            <path d="M100 335 C76 298 65 250 66 202"/><path d="M101 300 C125 265 138 224 138 174"/>
+            <path d="M100 365 C78 344 60 323 46 294"/><path d="M101 390 C127 365 147 342 159 310"/>
+          </g>
+          <g class="leaves" fill="#4b8a62">
+            <path d="M99 380 C64 370 47 349 43 326 C72 330 94 348 99 380Z"/>
+            <path d="M102 351 C132 334 151 312 155 287 C128 295 108 318 102 351Z"/>
+            <path d="M99 420 C73 414 59 399 54 382 C77 384 94 398 99 420Z"/>
+          </g>
+          <g class="flower-head lavender-head" fill="#b99be9" stroke="#8f6bc9" stroke-width="1.3">
+            <g class="sprig"><ellipse cx="100" cy="116" rx="7" ry="13"/><ellipse cx="93" cy="132" rx="7" ry="12"/><ellipse cx="107" cy="132" rx="7" ry="12"/><ellipse cx="94" cy="149" rx="7" ry="11"/><ellipse cx="108" cy="149" rx="7" ry="11"/><ellipse cx="100" cy="166" rx="7" ry="11"/></g>
+            <g class="sprig"><ellipse cx="66" cy="198" rx="6" ry="11"/><ellipse cx="60" cy="211" rx="6" ry="10"/><ellipse cx="72" cy="211" rx="6" ry="10"/><ellipse cx="66" cy="225" rx="6" ry="9"/></g>
+            <g class="sprig"><ellipse cx="138" cy="170" rx="6" ry="11"/><ellipse cx="132" cy="184" rx="6" ry="10"/><ellipse cx="144" cy="184" rx="6" ry="10"/><ellipse cx="138" cy="198" rx="6" ry="9"/></g>
+            <g class="sprig"><ellipse cx="46" cy="290" rx="5.5" ry="9"/><ellipse cx="41" cy="302" rx="5.5" ry="8"/><ellipse cx="52" cy="302" rx="5.5" ry="8"/></g>
+            <g class="sprig"><ellipse cx="159" cy="306" rx="5.5" ry="9"/><ellipse cx="153" cy="318" rx="5.5" ry="8"/><ellipse cx="165" cy="318" rx="5.5" ry="8"/></g>
+          </g>
+        </svg>
+        <figcaption>Lavanta</figcaption>
+      </figure>
+
+      <!-- Kardelen: aşağı bakan beyaz çan -->
+      <figure class="flower flower--snowdrop" style="--left: 28%; --height: 43vh; --width: 165px; --delay: .55s; --lean: 4deg;">
+        <svg class="flower-art" viewBox="0 0 200 460" role="img" aria-label="Kardelen">
+          <g class="stem-lines" fill="none" stroke="#4e8b61" stroke-width="6" stroke-linecap="round">
+            <path d="M100 450 C98 350 112 245 108 128"/>
+            <path d="M99 420 C63 391 51 358 47 318"/>
+            <path d="M104 395 C135 373 151 342 155 302"/>
+          </g>
+          <g class="leaves" fill="#4d9866">
+            <path d="M98 420 C55 411 35 381 34 340 C68 352 91 383 98 420Z"/>
+            <path d="M103 432 C145 415 166 382 166 343 C132 356 109 389 103 432Z"/>
+          </g>
+          <g class="flower-head snowdrop-head" stroke="#d7e6dd" stroke-width="2" stroke-linejoin="round">
+            <path d="M108 128 C82 119 72 139 82 158 C90 173 101 182 111 185 C120 173 127 153 119 138Z" fill="#f7fff3"/>
+            <path d="M109 134 C103 157 106 176 111 185 C119 172 126 151 119 137Z" fill="#dff1e6"/>
+            <path d="M86 127 C92 112 111 107 122 121 C114 118 101 120 94 132Z" fill="#7fb17d" stroke="#67956c"/>
+            <path d="M99 153 Q105 160 111 153" fill="none" stroke="#8da97c" stroke-width="3"/>
+          </g>
+        </svg>
+        <figcaption>Kardelen</figcaption>
+      </figure>
+
+      <!-- Papatya: ince beyaz taç yapraklar -->
+      <figure class="flower flower--daisy" style="--left: 47%; --height: 61vh; --width: 190px; --delay: .3s; --lean: -2deg;">
+        <svg class="flower-art" viewBox="0 0 200 460" role="img" aria-label="Papatya">
+          <g class="stem-lines" fill="none" stroke="#4d8757" stroke-width="6" stroke-linecap="round"><path d="M101 450 C101 340 98 250 100 154"/></g>
+          <g class="leaves" fill="#5c9a60"><path d="M99 359 C64 345 50 321 51 292 C78 301 96 326 99 359Z"/><path d="M101 390 C134 375 149 350 148 322 C121 332 104 356 101 390Z"/></g>
+          <g transform="translate(100 154)">
+            <g class="flower-head daisy-head">
+            <g class="daisy-petals" fill="#fffdf0" stroke="#e5e4d7" stroke-width="1.5">
+              <ellipse cy="-38" rx="12" ry="29"/><ellipse cy="-38" rx="12" ry="29" transform="rotate(30)"/><ellipse cy="-38" rx="12" ry="29" transform="rotate(60)"/><ellipse cy="-38" rx="12" ry="29" transform="rotate(90)"/><ellipse cy="-38" rx="12" ry="29" transform="rotate(120)"/><ellipse cy="-38" rx="12" ry="29" transform="rotate(150)"/><ellipse cy="-38" rx="12" ry="29" transform="rotate(180)"/><ellipse cy="-38" rx="12" ry="29" transform="rotate(210)"/><ellipse cy="-38" rx="12" ry="29" transform="rotate(240)"/><ellipse cy="-38" rx="12" ry="29" transform="rotate(270)"/><ellipse cy="-38" rx="12" ry="29" transform="rotate(300)"/><ellipse cy="-38" rx="12" ry="29" transform="rotate(330)"/>
+            </g>
+            <circle r="18" fill="#e9b84b" stroke="#c58b2d" stroke-width="2"/>
+            <circle r="10" fill="#f6d46e"/>
+            </g>
+          </g>
+        </svg>
+        <figcaption>Papatya</figcaption>
+      </figure>
+
+      <!-- Lale: kapalıdan açılan zarif baş -->
+      <figure class="flower flower--tulip" style="--left: 68%; --height: 52vh; --width: 185px; --delay: .75s; --lean: 5deg;">
+        <svg class="flower-art" viewBox="0 0 200 460" role="img" aria-label="Lale">
+          <g class="stem-lines" fill="none" stroke="#4b865d" stroke-width="7" stroke-linecap="round"><path d="M100 450 C96 345 103 240 100 132"/></g>
+          <g class="leaves" fill="#559364"><path d="M97 398 C54 380 38 342 43 297 C77 319 96 355 97 398Z"/><path d="M102 418 C145 399 162 360 155 316 C122 338 104 376 102 418Z"/></g>
+          <g class="flower-head tulip-head" stroke="#a84b70" stroke-width="2" stroke-linejoin="round">
+            <path d="M100 158 C80 127 57 99 62 58 C82 68 95 88 100 109 C105 82 119 62 140 55 C146 96 121 132 100 158Z" fill="#e889a8"/>
+            <path d="M100 158 C79 135 72 105 82 77 C96 91 102 117 100 158Z" fill="#f4b2c4"/>
+            <path d="M100 158 C119 127 128 95 119 70 C105 87 98 115 100 158Z" fill="#d96791"/>
+          </g>
+        </svg>
+        <figcaption>Lale</figcaption>
+      </figure>
+
+      <!-- Zambak: altı taç yapraklı -->
+      <figure class="flower flower--lily" style="--left: 84%; --height: 47vh; --width: 175px; --delay: 1s; --lean: -4deg;">
+        <svg class="flower-art" viewBox="0 0 200 460" role="img" aria-label="Zambak">
+          <g class="stem-lines" fill="none" stroke="#4d875a" stroke-width="6" stroke-linecap="round"><path d="M100 450 C102 345 100 250 100 154"/><path d="M100 350 C72 322 64 292 69 264"/><path d="M101 386 C128 360 143 331 140 302"/></g>
+          <g class="leaves" fill="#579463"><path d="M99 355 C69 345 54 324 54 298 C78 306 95 327 99 355Z"/><path d="M102 392 C134 378 151 353 151 326 C126 336 107 362 102 392Z"/></g>
+          <g class="flower-head lily-head" stroke="#be7d9c" stroke-width="1.6">
+            <path d="M100 154 C75 129 55 91 70 53 C91 68 101 103 100 154Z" fill="#f8c6d7"/>
+            <path d="M100 154 C86 113 91 76 113 48 C126 79 119 118 100 154Z" fill="#f5b6ce"/>
+            <path d="M100 154 C111 111 139 84 164 89 C151 122 128 146 100 154Z" fill="#f9d1df"/>
+            <path d="M100 154 C132 145 166 151 179 177 C146 189 117 177 100 154Z" fill="#f5b8cf"/>
+            <path d="M100 154 C121 184 119 219 96 236 C78 207 83 177 100 154Z" fill="#f9d0df"/>
+            <path d="M100 154 C77 185 47 195 24 176 C44 150 75 143 100 154Z" fill="#f2b0c9"/>
+            <path d="M99 153 Q115 140 126 130 M99 153 Q87 132 81 112 M99 153 Q121 160 143 167" fill="none" stroke="#c58aa4" stroke-width="2"/>
+            <circle cx="100" cy="154" r="6" fill="#dca94f" stroke="none"/>
+          </g>
+        </svg>
+        <figcaption>Zambak</figcaption>
+      </figure>
+      <div class="tiny-traveler" aria-hidden="true">
+        <svg viewBox="0 0 150 150" role="img" aria-label="Bir çiçeğin üzerinde oturup gökyüzünü izleyen küçük gezgin">
+          <defs>
+            <linearGradient id="coat" x1="0" x2="1" y1="0" y2="1"><stop offset="0" stop-color="#6d91bd"/><stop offset="1" stop-color="#344f7b"/></linearGradient>
+            <linearGradient id="scarf" x1="0" x2="1"><stop stop-color="#f1c36d"/><stop offset="1" stop-color="#d98c54"/></linearGradient>
+          </defs>
+          <!-- Özgün, masalsı küçük gezgin; arkası dönük, göğe bakıyor. -->
+          <path d="M67 73 Q50 83 47 104 L61 111 84 105 91 82Z" fill="url(#coat)" stroke="#253d62" stroke-width="2"/>
+          <path d="M62 101 Q48 108 39 123 L48 128 69 111Z" fill="#d9b98c"/>
+          <path d="M81 103 Q92 113 104 119 L111 113 92 94Z" fill="#d9b98c"/>
+          <path d="M58 74 Q74 65 91 78 L86 88 Q72 81 59 88Z" fill="url(#scarf)"/>
+          <path d="M86 80 Q104 78 108 91 Q96 96 86 88Z" fill="#e4a85f"/>
+          <circle cx="72" cy="61" r="17" fill="#e7b77e"/>
+          <path d="M56 59 Q54 39 72 39 Q91 39 90 60 Q82 51 73 53 Q65 54 56 59Z" fill="#d7a84f"/>
+          <path d="M59 54 Q65 43 78 45 Q86 46 90 55 Q83 50 76 51 Q66 50 59 58Z" fill="#f0cc75"/>
+          <path d="M70 63 Q76 67 82 63" fill="none" stroke="#9b684e" stroke-width="1.5" stroke-linecap="round"/>
+          <path d="M52 91 Q39 91 34 101" fill="none" stroke="#e7b77e" stroke-width="7" stroke-linecap="round"/>
+          <path d="M91 89 Q104 82 109 72" fill="none" stroke="#e7b77e" stroke-width="7" stroke-linecap="round"/>
+          <path d="M110 72 Q116 63 123 58" fill="none" stroke="#e7b77e" stroke-width="5" stroke-linecap="round"/>
+          <circle cx="124" cy="57" r="2" fill="#f6dfaa"/>
+        </svg>
+      </div>
+    </div>
+    <div class="grass grass--left" aria-hidden="true"></div>
+    <div class="grass grass--right" aria-hidden="true"></div>
+    <div class="ground-glow" aria-hidden="true"></div>
+  </main>
+
+  <div class="moon-hearts" id="moon-hearts" aria-hidden="true"></div>
+
+  <script src="script.js"></script>
+</body>
+</html>
